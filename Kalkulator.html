@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>CalculateNOW - Kira Zakat Anda</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Zakat</h1>
+        <form id="zakatForm">
+            <div class="form-group">
+                <label for="negeri">Pilihan Negeri</label>
+                <select name="negeri" id="negeri" required>
+                    <option value="">Pilih Negeri</option>
+                    <option value="1">Johor</option>
+                    <option value="2">Kedah</option>
+                    <option value="3">Kelantan</option>
+                    <option value="4">Melaka</option>
+                    <option value="5">Negeri Sembilan</option>
+                    <option value="6">Pahang</option>
+                    <option value="7">Perak</option>
+                    <option value="8">Perlis</option>
+                    <option value="9">Pulau Pinang</option>
+                    <option value="10">Sabah</option>
+                    <option value="11">Sarawak</option>
+                    <option value="12">Selangor</option>
+                    <option value="13">Terengganu</option>
+                    <option value="14">WP Kuala Lumpur</option>
+                    <option value="15">WP Labuan</option>
+                    <option value="16">WP Putrajaya</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pendapatan">Jumlah Pendapatan Tahunan (RM)</label>
+                <input type="number" name="pendapatan" id="pendapatan" placeholder="Masukkan Jumlah Pendapatan Tahunan" required>
+            </div>
+            <div class="deduction-item">
+                <span>Tambah Potongan?</span>
+                <label class="deduction-switch">
+                    <input type="checkbox" id="showDeductions">
+                    <span class="deduction-slider"></span>
+                </label>
+            </div>
+            <div id="deductionsContainer" style="display: none;">
+                <div class="deduction-store">
+                    <button type="button" class="add-button" data-item="isteri" data-amount="4000">Isteri (RM4,000)</button>
+                    <button type="button" class="add-button" data-item="anak" data-amount="2000">Anak (RM2,000)</button>
+                    <button type="button" class="add-button" data-item="kwsp">KWSP (11%)</button>
+                    <button type="button" class="add-button" data-item="sumbangan">Sumbangan Ibubapa</button>
+                    <button type="button" class="add-button" data-item="tabunghaji">Tabung Haji</button>
+                    <button type="button" class="add-button" data-item="takaful">Takaful</button>
+                </div>
+                <div class="selected-deductions"></div>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Kira Zakat</button>
+                <button type="reset" class="btn btn-reset">Ulang Semula</button>
+            </div>
+        </form>
+        <div class="result" id="result" style="display: none;">
+            <h2>Hasil Perhitungan Zakat</h2>
+            <p id="pendapatanResult"></p>
+            <p id="zakatResult" class="zakat-amount"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./scripts/app.js"></script>
+<footer>
+    &copy 2025 ZakatNOW by UNITI Waqi
+</footer>
+</html>
